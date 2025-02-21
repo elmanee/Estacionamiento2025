@@ -30,7 +30,7 @@ class Server{
         this.app.use('/api/vehiculos',vehiculoRoutes)
         this.app.use('/api/usuario',usuarioRoutes)
         this.app.use('/api/login',loginRoutes)
-        this.app.use('/api/pago',pagoRoutes)
+        this.app.use('/api/pago', pagoRoutes);
         
     }
     start():void{

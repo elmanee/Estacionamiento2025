@@ -13,6 +13,8 @@ class PagoRoutes{
         this.router.post('/',pagoController.create);
         this.router.put('/:IDPago', pagoController.update);
         this.router.delete('/:IDPago', pagoController.delete);
+        this.router.get('/download-historial-pdf', pagoController.downloadHistorialPdf);
+
     }
 }
 

@@ -3,6 +3,7 @@ import { UsuariosService } from 'src/app/services/usuario.service';
 import { AuthService } from 'src/app/services/auth.service';
 import { Usuario } from 'src/app/models/Usuario';
 import { Vehiculo } from 'src/app/models/Vehiculo';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-perfil-form',
@@ -22,7 +23,7 @@ export class PerfilFormComponent implements OnInit{
     created_at: new Date()
   };
 
-  constructor(private authService: AuthService, private usuariosService: UsuariosService) {}
+  constructor(private authService: AuthService, private usuariosService: UsuariosService, private http: HttpClient) {}
 
   ngOnInit() {
     var datos: any = this.authService.getCurrentUser();
@@ -48,5 +49,29 @@ export class PerfilFormComponent implements OnInit{
   editUser(id:string){
     console.log(id);
   }
+
+  descargarHistorialPdf() {
+    this.http.get('http://localhost:3000/api/pago/download-historial-pdf', {
+        responseType: 'blob',
+        headers: { 'Cache-Control': 'no-cache', 'Pragma': 'no-cache' }
+    })
+    .subscribe({
+        next: (response: Blob) => {
+            const url = window.URL.createObjectURL(response);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `historial_${new Date().getTime()}.pdf`; // Cambia el nombre para evitar caché
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+        },
+        error: (error) => {
+            console.error('Error descargando el PDF:', error);
+        }
+    });
 }
+
+
+}
+
 

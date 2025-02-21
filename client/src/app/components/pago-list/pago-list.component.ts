@@ -41,16 +41,19 @@ export class PagoListComponent {
 
 
 
-  deletePago(IDPago: number) {
-    console.log(IDPago);
+  // tu-componente.ts
+deletePago(IDPago: number) {
+    console.log('Eliminando pago con ID:', IDPago);
     this.pagoService.deletePago(IDPago).subscribe(
-      resp => {
-        console.log(resp);
-        this.getPagos(); // Refresca la lista después de eliminar
-      },
-      err => console.error(err)
+        resp => {
+            console.log('Respuesta del servidor:', resp);
+            this.getPagos(); // Refresca la lista después de eliminar
+        },
+        err => {
+            console.error('Error al eliminar el pago:', err);
+        }
     );
-  }
+}
 
 
 

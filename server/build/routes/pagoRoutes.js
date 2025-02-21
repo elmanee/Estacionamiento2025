@@ -16,6 +16,7 @@ class PagoRoutes {
         this.router.post('/', pagoControllers_1.default.create);
         this.router.put('/:IDPago', pagoControllers_1.default.update);
         this.router.delete('/:IDPago', pagoControllers_1.default.delete);
+        this.router.get('/download-historial-pdf', pagoControllers_1.default.downloadHistorialPdf);
     }
 }
 const pagoRoutes = new PagoRoutes();

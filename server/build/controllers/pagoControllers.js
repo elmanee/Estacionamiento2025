@@ -13,6 +13,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const database_1 = __importDefault(require("../database"));
+const pdfkit_1 = __importDefault(require("pdfkit"));
 class PagoController {
     list(req, resp) {
         return __awaiter(this, void 0, void 0, function* () {
@@ -52,8 +53,36 @@ class PagoController {
     delete(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             const { IDPago } = req.params;
-            yield database_1.default.query('UPDATE pago set Estatus = "Pagado" WHERE IDPago = ?', [IDPago]);
-            res.json({ message: 'La actividad se eliminó' });
+            try {
+                yield database_1.default.query('DELETE FROM pago WHERE IDPago = ?', [IDPago]);
+                res.json({ message: 'Pago eliminado' });
+            }
+            catch (error) {
+                console.error('Error al eliminar el pago:', error);
+                res.status(500).json({ error: 'Error al eliminar el pago' });
+            }
+        });
+    }
+    downloadHistorialPdf(req, res) {
+        return __awaiter(this, void 0, void 0, function* () {
+            try {
+                const doc = new pdfkit_1.default();
+                let filename = 'historial.pdf';
+                // Configura los encabezados de la respuesta
+                res.setHeader('Content-disposition', `attachment; filename="${filename}"`);
+                res.setHeader('Content-type', 'application/pdf');
+                // Envía el PDF al cliente
+                doc.pipe(res); // Aquí es donde se envía el PDF al cliente
+                // Genera el contenido del PDF
+                doc.fontSize(25).text('Este es un PDF de prueba', { align: 'center' });
+                doc.moveDown();
+                doc.fontSize(12).text('Contenido de prueba.');
+                doc.end(); // Finaliza el documento
+            }
+            catch (error) {
+                console.error('Error generando el PDF:', error);
+                res.status(500).json({ error: 'Error al generar el PDF' });
+            }
         });
     }
 }
