@@ -1,39 +1,38 @@
 <!-- user-profile.component.html -->
-<div class="container1">
-<div class="container">
+<div class="container mt-5">
   <div class="panel panel-primary" *ngIf="usuario">
     <div class="panel-heading">
-      <h3 class="panel-title">User information</h3>
+      <h3 class="panel-title">Información del Usuario</h3>
     </div>
     <div class="panel-body">
       <div class="row">
-        <div class="col-md-3">
-          <img class="img-circle"
+        <div class="col-md-3 text-center">
+          <img class="img-fluid rounded-circle border border-primary"
                src="https://lh5.googleusercontent.com/-b0-k99FZlyE/AAAAAAAAAAI/AAAAAAAAAAA/eu7opA4byxI/photo.jpg?sz=100"
-               alt="User Pic">
+               alt="User  Pic" style="width: 100px; height: 100px;">
         </div>
-        <div class="col-md-6">
-          <strong>{{usuario.nombre}}</strong><br>
-          <table class="table table-condensed table-responsive table-user-information">
+        <div class="col-md-9">
+          <strong class="h4">{{usuario.nombre}}</strong><br>
+          <table class="table table-bordered table-striped table-user-information">
             <tbody>
               <tr>
-                <td>Nombre:</td>
+                <td><strong>Nombre:</strong></td>
                 <td>{{usuario.nombre}}</td>
               </tr>
               <tr>
-                <td>Apellido Paterno:</td>
+                <td><strong>Apellido Paterno:</strong></td>
                 <td>{{usuario.apeP}}</td>
               </tr>
               <tr>
-                <td>Apellido Materno:</td>
+                <td><strong>Apellido Materno:</strong></td>
                 <td>{{usuario.apeM}}</td>
               </tr>
               <tr>
-                <td>Teléfono:</td>
+                <td><strong>Teléfono:</strong></td>
                 <td>{{usuario.telefono}}</td>
               </tr>
               <tr>
-                <td>Correo:</td>
+                <td><strong>Correo:</strong></td>
                 <td>{{usuario.correo}}</td>
               </tr>
             </tbody>
@@ -41,15 +40,40 @@
         </div>
       </div>
     </div>
-    <button class="btn btn-info" routerLink="/home/pagoTabla">
-      Ver Historial de Pagos
-    </button>
-    <div class="panel-footer">
-      <!-- Agrega aquí tus botones si es necesario -->
+    <div class="panel-footer text-center">
+      <button class="btn btn-info" routerLink="/home/pagoTabla">
+        Ver Historial de Pagos
+      </button>
+      <button class="btn btn-success" >
+        Descargar Historial
+      </button>
     </div>
-    <p style="margin-top: 300px;"></p>
   </div>
-
 </div>
 
-</div>
+<style>
+  .panel {
+    border: 1px solid #007bff; /* Borde azul */
+    border-radius: 10px; /* Bordes redondeados */
+  }
+
+  .panel-heading {
+    background-color: #007bff; /* Fondo azul */
+    color: white; /* Texto blanco */
+    border-top-left-radius: 10px; /* Bordes redondeados */
+    border-top-right-radius: 10px; /* Bordes redondeados */
+  }
+
+  .table-user-information td {
+    vertical-align: middle; /* Alinear verticalmente el contenido */
+  }
+
+  .btn-info {
+    margin-top: 15px; /* Espacio superior para el botón */
+    margin-right: 10px; /* Espacio a la derecha para el botón */
+  }
+
+  .btn-success {
+    margin-top: 15px; /* Espacio superior para el botón */
+  }
+</style>

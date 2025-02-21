@@ -1,48 +1,87 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Estacionamiento UTNG</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <style>
+    body {
+      background: url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=1600&h=900&fit=crop') no-repeat center center/cover;
+      color: white;
+      text-align: center;
+    }
+    .hero {
+      background: rgba(0, 0, 0, 0.6);
+      padding: 50px 20px;
+    }
+    .features {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      padding: 50px 20px;
+    }
+    .feature {
+      background: rgba(0, 0, 0, 0.7);
+      padding: 20px;
+      border-radius: 10px;
+      width: 300px;
+    }
+    .social-buttons img {
+      margin: 10px;
+      transition: transform 0.3s;
+    }
+    .social-buttons img:hover {
+      transform: scale(1.2);
+    }
+    footer {
+      background: rgba(0, 0, 0, 0.8);
+      padding: 10px 0;
+    }
+  </style>
 </head>
-<body class="img">
+<body>
   <section class="hero">
-    <div class="hero-content" >
+    <div class="container">
       <h2>Bienvenido a nuestro estacionamiento</h2>
       <p>Ofrecemos servicios de estacionamiento seguros y convenientes.</p>
     </div>
   </section>
 
-  <section class="features">
+  <section class="features container">
     <div class="feature">
-      <i class="fas fa-car"></i>
+      <i class="fas fa-car fa-3x mb-3"></i>
       <h4>Amplio espacio de estacionamiento</h4>
-      <p>Nuestro estacionamiento cuenta con una gran cantidad de espacios disponibles para estacionar tu vehículo de forma cómoda.</p>
+      <p>Contamos con una gran cantidad de espacios disponibles para tu comodidad.</p>
     </div>
     <div class="feature">
-      <i class="fas fa-lock"></i>
+      <i class="fas fa-lock fa-3x mb-3"></i>
       <h4>Seguridad garantizada</h4>
-      <p>Nuestro estacionamiento está equipado con sistemas de seguridad avanzados para proteger tu vehículo las 24 horas del día.</p>
+      <p>Equipado con sistemas de seguridad avanzados las 24 horas del día.</p>
     </div>
     <div class="feature">
-      <i class="fas fa-clock"></i>
+      <i class="fas fa-clock fa-3x mb-3"></i>
       <h4>Acceso las 24 horas</h4>
-      <p>Podrás acceder a nuestro estacionamiento en cualquier momento, ya sea de día o de noche, los 7 días de la semana.</p>
+      <p>Puedes acceder en cualquier momento, de día o de noche.</p>
     </div>
-    <div class="social-buttons">
-      <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
-        <img src="https://www.facebook.com/images/fb_icon_325x325.png" height="35px" width="35px" alt="Facebook">
-      </a>
-      <a href="https://www.twitter.com" target="_blank" rel="noopener noreferrer">
-        <img src="https://cdn.cms-twdigitalassets.com/content/dam/help-twitter/twitter_logo_blue.png.twimg.768.png" alt="Twitter" height="40px" width="40px">
-      </a>
-      <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Instagram-Icon.png/800px-Instagram-Icon.png" height="35px" width="35px" alt="Instagram">
-      </a>
-    </div>
-    
   </section>
+
+  <div class="social-buttons text-center">
+    <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
+      <i class="fab fa-facebook fa-2x"></i>
+    </a>
+    <a href="https://www.twitter.com" target="_blank" rel="noopener noreferrer">
+      <i class="fab fa-twitter fa-2x"></i>
+    </a>
+    <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
+      <i class="fab fa-instagram fa-2x"></i>
+    </a>
+  </div>
 
   <footer>
     <p>&copy; 2023 Estacionamiento UTNG. Todos los derechos reservados.</p>
   </footer>
 </body>
 </html>
-

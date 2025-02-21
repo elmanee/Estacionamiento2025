@@ -1,37 +1,67 @@
-<div class="container">
-    <div class="hero">
-      <div class="hero-content">
-        <h2>Crea un usuario y contraseña</h2>
-        <p>Usa un correo electronico y una contraseña de almenos 8 caracteres</p>
+<div class="container d-flex flex-column align-items-center justify-content-center min-vh-100">
+  <div class="hero text-center mb-4">
+    <h2 class="display-4">Crea un usuario y contraseña</h2>
+    <p class="lead">Usa un correo electrónico y una contraseña de al menos 8 caracteres.</p>
+  </div>
+
+  <div class="signup-box shadow-lg p-4 rounded bg-light">
+    <form>
+      <div class="form-group">
+        <input type="text" name="nombre" placeholder="Nombre" class="form-control mb-3" [(ngModel)]="usuario.nombre" required>
       </div>
+      <div class="form-group">
+        <input type="text" name="apellidoPaterno" placeholder="Apellido Paterno" class="form-control mb-3" [(ngModel)]="usuario.apeP" required>
+      </div>
+      <div class="form-group">
+        <input type="text" name="apellidoMaterno" placeholder="Apellido Materno" class="form-control mb-3" [(ngModel)]="usuario.apeM" required>
+      </div>
+      <div class="form-group">
+        <input type="text" name="telefono" placeholder="Teléfono" class="form-control mb-3" [(ngModel)]="usuario.telefono" required>
+      </div>
+      <div class="form-group">
+        <input type="email" name="correo" placeholder="Correo Electrónico" class="form-control mb-3" [(ngModel)]="usuario.correo" required>
+      </div>
+      <div class="form-group">
+        <input type="password" name="password1" placeholder="Contraseña" class="form-control mb-3" [(ngModel)]="usuario.password1" required>
+      </div>
+      <div class="form-group">
+        <input type="password" name="password2" placeholder="Repetir Contraseña" class="form-control mb-3" [(ngModel)]="usuario.password2" required>
+      </div>
+      <button type="submit" class="btn btn-success btn-block" (click)="newUsuario()">
+        CREAR CUENTA
+      </button>
+    </form>
   </div>
-    <div class="signup-box">
-      <h2></h2>
-      <form>
-        <div class="form-group">
-            <input type="text" name="nombre" placeholder="nombre" class="form-control" [(ngModel)]="usuario.nombre" >
-        </div>  
-        <div class="form-group">
-            <input type="text" name="apellido paterno" placeholder="apeP" class="form-control" [(ngModel)]="usuario.apeP" >
-        </div> 
-        <div class="form-group">
-            <input type="text" name="apellido materno" placeholder="apeM" class="form-control" [(ngModel)]="usuario.apeM" >
-        </div> 
-        <div class="form-group">
-            <input type="text" name="telefono" placeholder="telefono" class="form-control" [(ngModel)]="usuario.telefono" >
-        </div> 
-        <div class="form-group">
-            <input type="email" name="correo" placeholder="correo" class="input" [(ngModel)]="usuario.correo" >
-        </div> 
-        <div class="form-group">
-            <input type="password" name="password1" placeholder="password1" class="form-control" [(ngModel)]="usuario.password1" >
-        </div> 
-        <div class="form-group">
-            <input type="password" name="password2" placeholder="password2" class="form-control" [(ngModel)]="usuario.password2" >
-        </div> 
-        <button class="btn btn-success btn-block" (click)="newUsuario()">
-            CREAR CUENTA
-        </button>
-      </form>
-    </div>
-  </div>
+</div>
+
+<style>
+  body {
+    background-color: #f8f9fa; /* Fondo claro */
+  }
+
+  .hero {
+    margin-bottom: 30px;
+    color: #007bff; /* Color azul para el texto */
+  }
+
+  .signup-box {
+    width: 100%;
+    max-width: 400px; /* Ancho máximo del formulario */
+    border: 1px solid rgba(0, 0, 0, 0.1); /* Borde sutil */
+  }
+
+  .form-control {
+    border-radius: 0.25rem; /* Bordes redondeados */
+    box-shadow: none; /* Sin sombra */
+  }
+
+  .btn-success {
+    background-color: #28a745; /* Color verde */
+    border-color: #28a745;
+  }
+
+  .btn-success:hover {
+    background-color: #218838; /* Color verde más oscuro al pasar el mouse */
+    border-color: #1e7e34;
+  }
+</style>

@@ -1,22 +1,54 @@
-<div class="container">
-  <div class="hero">
-    <div class="hero-content">
-      <h2>Inicia sesion con tu usuario y contraseña</h2>
-      <p>Al ser parte de nosotros podras disfrutar de todos nuestros servicios.</p>
-      <a class="nav-link" href="home/crea_cuenta">¿No tienes una cuenta? clic aquí</a>
-    </div>
+<div class="container d-flex flex-column align-items-center justify-content-center min-vh-100">
+  <div class="hero text-center mb-4">
+    <h2 class="display-4">Inicia sesión</h2>
+    <p class="lead">Accede a todos nuestros servicios con tu cuenta.</p>
+    <a class="nav-link" href="home/crea_cuenta">¿No tienes una cuenta? Clic aquí</a>
   </div>
-<div class="login-box">
-  <form class="custom-form" method="post">
-    <div class="form-group">
-    <input type="email" [(ngModel)]="correo" name="email" placeholder="Email" required="required"/>
-    </div>
-    <div class="form-group">
-    <input type="password" [(ngModel)]="password1" name="password" placeholder="Password" required="required"/>
-    </div>
-    <div class="form-group">
-    <button type="submit" (click)="login()">Log in</button>
-    </div>
-  </form>
+
+  <div class="login-box shadow p-4 rounded bg-white">
+    <form class="custom-form" method="post">
+      <div class="form-group">
+        <label for="email" class="form-label">Email</label>
+        <input type="email" id="email" [(ngModel)]="correo" name="email" placeholder="Introduce tu email" required class="form-control mb-3" />
+      </div>
+      <div class="form-group">
+        <label for="password" class="form-label">Contraseña</label>
+        <input type="password" id="password" [(ngModel)]="password1" name="password" placeholder="Introduce tu contraseña" required class="form-control mb-3" />
+      </div>
+      <div class="form-group text-center">
+        <button type="submit" (click)="login()" class="btn btn-success btn-block">Iniciar sesión</button>
+      </div>
+    </form>
+  </div>
 </div>
-  
+
+<style>
+  body {
+    background-color: #f8f9fa; /* Fondo claro */
+  }
+
+  .hero {
+    margin-bottom: 30px;
+  }
+
+  .login-box {
+    width: 100%;
+    max-width: 400px; /* Ancho máximo del formulario */
+    border: 1px solid #ced4da; /* Borde sutil */
+  }
+
+  .form-control {
+    border-radius: 0.25rem; /* Bordes redondeados */
+    box-shadow: none; /* Sin sombra */
+  }
+
+  .btn-success {
+    background-color: #28a745; /* Color verde */
+    border-color: #28a745;
+  }
+
+  .btn-success:hover {
+    background-color: #218838; /* Color verde más oscuro al pasar el mouse */
+    border-color: #1e7e34;
+  }
+</style>
