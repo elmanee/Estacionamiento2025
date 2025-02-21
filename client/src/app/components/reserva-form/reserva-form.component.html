@@ -1,0 +1,56 @@
+<head></head>
+<h2>Mapa de Lugares</h2>
+<div  class="container">
+    <aside style="margin-top: 26px;">    <img src="https://i.pinimg.com/564x/a7/16/4b/a7164b7d16dd6101f232d86096353c29.jpg" alt="imagen" style="display: inline-block; vertical-align: middle;">
+</aside>
+
+    <div class="row">
+      <div class="col-md-12">
+        <table style="display: inline-block; vertical-align: middle;">
+<div style="margin-top: 20px;" class="reservation-box">
+    <h3>Agregar reserva de estacionamiento</h3>
+    <div class="card">
+        <div class="card-body">
+            <form >
+                <div class="form-group">
+                    <input type="text" name="matricula" placeholder="matricula" class="form-control" [(ngModel)]="vehiculo.matricula" >
+                </div>  
+                <div class="form-group">
+                    <input type="text" name="nombreDue" placeholder="nombreDue" class="form-control" [(ngModel)]="vehiculo.nombreDue" >
+                </div>  
+                <div class="form-group">
+                    <input type="text" name="modelo" placeholder="modelo" class="form-control" [(ngModel)]="vehiculo.modelo" >
+                </div> 
+                <div class="form-group">
+                    <input type="text" name="color" placeholder="color" class="form-control" [(ngModel)]="vehiculo.color" >
+                </div> 
+
+                <div class="form-group">
+                    <input type="text" name="espacio" placeholder="espacio" class="form-control" [(ngModel)]="vehiculo.espacio" >
+                </div>  
+                
+                <button class="btn btn-success btn-block" (click)="newReserva()">
+                    RESERVAR
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</div>
+</table>
+</div>
+</div>
+</div>
+<!--
+<div class = "col-md-4">
+    <div class="form-group text-center">
+        <h3>{{vehiculo.nombre == '' ? 'Nombre': vehiculo.nombre}} </h3>
+        <p>{{vehiculo.matricula == '' ? 'Matricula': vehiculo.matricula  }}</p>
+        <p>{{vehiculo.espacio == '' ? 'Espacio': vehiculo.espacio  }}</p>
+        <p>{{vehiculo.created_at | date:'yyyy-MM-dd'}}</p>
+
+    </div> -->
+    <!-- este pie de angular es para dar formato deseado a la fecha antes de presentarla -->

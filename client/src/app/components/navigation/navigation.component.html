@@ -1,0 +1,45 @@
+
+<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+    integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+  
+<nav class="navbar navbar-expand-lg bg-dark" data-bs-theme="dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" routerLink="/"><img src="https://cdn-icons-png.flaticon.com/512/9210/9210792.png" height="50px" width="50px"></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarColor02">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="home" routerLinkActive="active"><i class="fas fa-home"></i>Home</a>
+        </li>
+        <li class="nav-item" *ngIf="authService.isAuthenticated()">
+          <a class="nav-link" routerLink="home/registros/add" routerLinkActive="active"><i class="fas fa-edit"></i>Registro</a>
+        </li>
+        <li class="nav-item" *ngIf="authService.isAuthenticated()">
+          <a class="nav-link" routerLink="home/reserva" routerLinkActive="active"><i class="fas fa-tasks"></i>Reservas</a>
+        </li>
+        <li class="nav-item" *ngIf="authService.isAuthenticated()">
+          <a class="nav-link" routerLink="home/ubicacion" routerLinkActive="active"><i class="fas fa-tasks"></i>Ubicación</a>
+        </li>
+        
+        <li class="nav-item dropdown">
+          <a class="nav-link" [routerLink]="['home/login']" *ngIf="!authService.isAuthenticated()" routerLinkActive="active" style=" text-decoration: none;"><i class="fas fa-door-open"></i> Login</a>
+          <a class="nav-link" [routerLink]="['home/perfil']" *ngIf="authService.isAuthenticated()" routerLinkActive="active" style=" text-decoration: none;"><i class="far fa-user"></i>Usuario</a>
+        </li>
+        
+         
+        <li class="nav-item" *ngIf="authService.isAuthenticated()">
+          <button class="nav-link" (click)="logout()" style="text-decoration: none; background: none; border: none; cursor: pointer;">
+            <i class="fas fa-sign-out-alt"></i>Salir
+          </button>
+        </li>    
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+
+  
+  

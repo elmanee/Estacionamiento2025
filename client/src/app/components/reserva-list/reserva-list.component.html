@@ -1,0 +1,40 @@
+<div class="col-md-12">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Matrícula</th>
+          <th>Dueño</th>
+          <th>Modelo</th>
+          <th>Color</th>
+          <th>Espacio</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let vehiculo of vehiculos">
+          <td >{{ vehiculo.IdVehiculo}}</td>
+          <td >{{ vehiculo.matricula }}</td>
+          <td >{{ vehiculo.nombreDue }}</td>
+          <td >{{ vehiculo.modelo }}</td>
+          <td >{{ vehiculo.color }}</td>
+          <td >{{ vehiculo.espacio }}</td>
+          <td>
+            <div class="actions">
+              <button class="btn btn-danger" (click)="deleteVehiculo(vehiculo.matricula)">
+                <i class="fas fa-times"></i> Cancelar
+              </button>
+              <button class="btn btn-info" [routerLink]="['/home/editRese', vehiculo.IdVehiculo]">
+                Editar
+              </button>
+              <button class="btn btn-info" routerLink="/home/pago">
+                Pago
+              </button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+

@@ -1,0 +1,55 @@
+<!-- user-profile.component.html -->
+<div class="container1">
+<div class="container">
+  <div class="panel panel-primary" *ngIf="usuario">
+    <div class="panel-heading">
+      <h3 class="panel-title">User information</h3>
+    </div>
+    <div class="panel-body">
+      <div class="row">
+        <div class="col-md-3">
+          <img class="img-circle"
+               src="https://lh5.googleusercontent.com/-b0-k99FZlyE/AAAAAAAAAAI/AAAAAAAAAAA/eu7opA4byxI/photo.jpg?sz=100"
+               alt="User Pic">
+        </div>
+        <div class="col-md-6">
+          <strong>{{usuario.nombre}}</strong><br>
+          <table class="table table-condensed table-responsive table-user-information">
+            <tbody>
+              <tr>
+                <td>Nombre:</td>
+                <td>{{usuario.nombre}}</td>
+              </tr>
+              <tr>
+                <td>Apellido Paterno:</td>
+                <td>{{usuario.apeP}}</td>
+              </tr>
+              <tr>
+                <td>Apellido Materno:</td>
+                <td>{{usuario.apeM}}</td>
+              </tr>
+              <tr>
+                <td>Teléfono:</td>
+                <td>{{usuario.telefono}}</td>
+              </tr>
+              <tr>
+                <td>Correo:</td>
+                <td>{{usuario.correo}}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <button class="btn btn-info" routerLink="/home/pagoTabla">
+      Ver Historial de Pagos
+    </button>
+    <div class="panel-footer">
+      <!-- Agrega aquí tus botones si es necesario -->
+    </div>
+    <p style="margin-top: 300px;"></p>
+  </div>
+
+</div>
+
+</div>

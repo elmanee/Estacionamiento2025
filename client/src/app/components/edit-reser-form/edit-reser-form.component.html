@@ -1,0 +1,37 @@
+
+<div class="reservation-box">
+    <h3>Editar Reserva</h3>
+    <div class="card">
+        <div class="card-body">
+            <form >
+
+                <div class="form-group">
+                    <input type="text" name="matricula" placeholder="matricula" class="form-control" [(ngModel)]="vehiculo.matricula" >
+                </div>
+                <div class="form-group">
+                    <input type="text" name="nombreDue" placeholder="nombre del dueño" class="form-control" [(ngModel)]="vehiculo.nombreDue" >
+                </div>
+                <div class="form-group">
+                    <input type="text" name="modelo" placeholder="modelo" class="form-control" [(ngModel)]="vehiculo.modelo" >
+                </div>
+                <div class="form-group">
+                    <input type="text" name="color" placeholder="color" class="form-control" [(ngModel)]="vehiculo.color" >
+                </div>
+
+                <div class="form-group">
+                    <input type="text" name="espacio" placeholder="espacio" class="form-control" [(ngModel)]="vehiculo.espacio" >
+                </div>
+
+                <button class="btn btn-success btn-block" (click)="editReserva()">
+                    EDITAR
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</div>
+
+

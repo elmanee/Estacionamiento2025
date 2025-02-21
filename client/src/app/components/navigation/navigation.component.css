@@ -1,0 +1,6 @@
+.no-link-style {
+    color: inherit; /* Heredar el color del texto del elemento padre */
+    text-decoration: none; /* Eliminar la subraya de los enlaces */
+    cursor: pointer; /* Cambiar el cursor a un puntero al pasar por encima */
+  }
+  

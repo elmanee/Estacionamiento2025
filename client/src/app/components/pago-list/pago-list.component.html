@@ -1,0 +1,34 @@
+<div class="col-md-12">
+  <table class="table">
+    <thead>
+      <tr>
+          <th>ID</th>
+          <th>Concepto</th>
+          <th>Monto</th>
+          <th>Fecha</th>
+          <th>Estatus</th>
+          <th>PayPal</th>
+          <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let pago of pagos">
+          <td>{{ pago.IDPago }}</td>
+          <td>{{ pago.concepto }}</td>
+          <td>{{ pago.monto }}</td>
+          <td>{{ pago.created_at }}</td>
+          <td>{{ pago.Estatus }}</td>
+          <td>
+              <a class="btn btn-info" [href]="'https://www.paypal.com/checkoutnow?token=' + pago.IDPago" target="_blank">
+                <i class="fas fa-coins"></i> Pagar
+              </a>
+          </td>
+          <td>
+              <button class="btn btn-danger" (click)="deletePago(pago.IDPago)">
+                <i class="fas fa-trash"></i> Eliminar
+              </button>
+          </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

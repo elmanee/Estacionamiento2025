@@ -1,0 +1,9 @@
+body {
+    background-image: url('https://dataexport.com.gt/wp-content/uploads/2022/10/pagos-en-linea.jpg'); /* Reemplaza 'ruta_de_la_imagen.jpg' con la ruta de tu imagen de fondo */
+    background-size: cover; /* Ajusta la imagen para cubrir todo el fondo */
+    background-repeat: no-repeat; /* Evita que la imagen de fondo se repita */
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
