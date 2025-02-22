@@ -1,0 +1,9 @@
+<form (submit)="sendMessage()">
+  <label>Número de WhatsApp:</label>
+  <input type="text" [(ngModel)]="phone" placeholder="521234567890" required>
+
+  <label>Mensaje:</label>
+  <textarea [(ngModel)]="message" required></textarea>
+
+  <button type="submit">Enviar Mensaje</button>
+</form>

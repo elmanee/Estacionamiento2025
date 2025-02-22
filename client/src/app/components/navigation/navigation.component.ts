@@ -7,11 +7,12 @@ import { Router } from '@angular/router';
   templateUrl: './navigation.component.html',
   styleUrls: ['./navigation.component.css']
 })
+
 export class NavigationComponent {
   constructor(public authService: AuthService, private router: Router) {}
 
   logout() {
     this.authService.logout();
-    this.router.navigate(['/home']);  
+    this.router.navigate(['/home']);
   }
 }

@@ -11,6 +11,7 @@ const cors_1 = __importDefault(require("cors"));
 const usuarioRoutes_1 = __importDefault(require("./routes/usuarioRoutes"));
 const loginRoutes_1 = __importDefault(require("./routes/loginRoutes"));
 const pagoRoutes_1 = __importDefault(require("./routes/pagoRoutes"));
+const wspRoutes_1 = __importDefault(require("./routes/wspRoutes"));
 class Server {
     constructor() {
         this.app = (0, express_1.default)();
@@ -31,6 +32,7 @@ class Server {
         this.app.use('/api/usuario', usuarioRoutes_1.default);
         this.app.use('/api/login', loginRoutes_1.default);
         this.app.use('/api/pago', pagoRoutes_1.default);
+        this.app.use('/api/whatsapp', wspRoutes_1.default);
     }
     start() {
         this.app.listen(this.app.get('port'), () => {

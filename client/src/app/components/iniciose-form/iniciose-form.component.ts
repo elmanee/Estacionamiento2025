@@ -12,7 +12,7 @@ import { Validators } from '@angular/forms';
 })
 export class InicioseFormComponent {
   @HostBinding('class') classes = 'row';
-  usuario: Usuario= { 
+  usuario: Usuario= {
    idUsuario: undefined,
    nombre: '',
    apeP: '',
@@ -22,22 +22,22 @@ export class InicioseFormComponent {
    password1: '',
    password2: '',
    created_at: new Date()
- 
+
   }
   constructor(private usuariosService : UsuariosService, private router: Router){}
   ngOnInit(){}
-   
+
  newUsuario(){
   delete this.usuario.created_at;
    this.usuariosService.saveUsuario(this.usuario).subscribe(
    resp =>{console.log(resp)
     this.router.navigate(['/home/login']);},
    err => console.log(err)
- 
-   ) 
+
+   )
 
  }
- 
+
 }
 
 

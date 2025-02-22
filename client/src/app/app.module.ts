@@ -21,6 +21,8 @@ import { EditPerFormComponent } from './components/edit-per-form/edit-per-form.c
 import { PagoFormComponent } from './components/pago-form/pago-form.component';
 import { PagoListComponent } from './components/pago-list/pago-list.component';
 import { UbicacionComponent } from './components/ubicacion/ubicacion.component';
+import { WhatsappComponent } from './components/whatsapp/whatsapp.component';
+import { ChatBubbleComponent } from './components/chat-bubble/chat-bubble.component';
 
 
 
@@ -40,13 +42,16 @@ import { UbicacionComponent } from './components/ubicacion/ubicacion.component';
     EditPerFormComponent,
     PagoFormComponent,
     PagoListComponent,
-    UbicacionComponent
+    UbicacionComponent,
+    WhatsappComponent,
+    ChatBubbleComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    RouterModule
   ],
   providers: [
     VehiculosService

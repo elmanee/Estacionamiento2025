@@ -1,0 +1,10 @@
+<div class="chat-bubble" [class.open]="isOpen">
+  <button class="chat-button" (click)="toggleChat()">
+    💬
+  </button>
+  <div class="chat-box" *ngIf="isOpen">
+    <h3>Enviar Mensaje</h3>
+    <textarea [(ngModel)]="message" placeholder="Escribe tu mensaje" required></textarea>
+    <button (click)="sendMessage()">Enviar</button>
+  </div>
+</div>
